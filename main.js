@@ -21,8 +21,14 @@ button.addEventListener("click", setTextFromPage) //Note: event listeners will a
 textBox.addEventListener("keyup", setTextFromPage)
 */
 
+/*
 let XDisplay = document.getElementById("X")
 let YDisplay = document.getElementById("Y")
+*/
+
+//jquery version
+let XDisplay = $("#X")
+let YDisplay = $("#Y")
 
 // Anonymouse function syntax. But not hoisted, so it has to be declared above
 let trackMouse = (e)=>{
@@ -30,8 +36,12 @@ let trackMouse = (e)=>{
     XDisplay.innerHTML = "X: " + e.screenX;
     YDisplay.innerHTML = "Y: " + e.screenY;
     */
+    /*
     XDisplay.innerHTML = `X: ${e.screenX}` // Cool kids do strnigs like this
     YDisplay.innerHTML = `Y: ${e.screenY}` // This is useful in case you want your string to be like, <p> something </p>
+    */
+    XDisplay.html(`X: ${e.screenX}`)
+    YDisplay.html(`Y: ${e.screenY}`)
 
 }
 window.addEventListener("mousemove", trackMouse) //Note: dangerous style
